@@ -1,0 +1,43 @@
+name: v6un
+
+mgmt:
+  network: v6un
+  ipv4-subnet: 10.0.6.0/24
+
+topology:
+  kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux
+    linux:
+      image: ghcr.io/hellt/network-multitool
+  nodes:
+    l1:
+      kind: nokia_srlinux
+      type: ixrd2l
+    l2:
+      kind: nokia_srlinux
+      type: ixrd2l
+    l3:
+      kind: nokia_srlinux
+      type: ixrd2l
+    sp1:
+      kind: nokia_srlinux
+      type: ixrd3l
+    sp2:
+      kind: nokia_srlinux
+      type: ixrd3l
+    client1:
+      kind: linux
+    client2:
+      kind: linux
+
+  links:
+    - endpoints: ["l1:e1-1", "sp1:e1-1"]
+    - endpoints: ["l1:e1-2", "sp2:e1-1"]
+    - endpoints: ["l1:e1-3", "client1:eth1"]
+    - endpoints: ["l2:e1-1", "sp1:e1-2"]
+    - endpoints: ["l2:e1-2", "sp2:e1-2"]
+    - endpoints: ["l2:e1-3", "client1:eth2"]
+    - endpoints: ["l3:e1-1", "sp1:e1-3"]
+    - endpoints: ["l3:e1-2", "sp2:e1-3"]
+    - endpoints: ["l3:e1-3", "client2:eth1"]
