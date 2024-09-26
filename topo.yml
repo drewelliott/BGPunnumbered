@@ -13,23 +13,35 @@ topology:
   nodes:
     l1:
       kind: nokia_srlinux
+      mgmt-ipv4: 10.0.6.101
       type: ixrd2l
+      startup-config: configs/l1.cfg
     l2:
       kind: nokia_srlinux
+      mgmt-ipv4: 10.0.6.102
       type: ixrd2l
+      startup-config: configs/l2.cfg
     l3:
       kind: nokia_srlinux
+      mgmt-ipv4: 10.0.6.103
       type: ixrd2l
+      startup-config: configs/l3.cfg
     sp1:
       kind: nokia_srlinux
+      mgmt-ipv4: 10.0.6.11
       type: ixrd3l
+      startup-config: configs/sp1.cfg
     sp2:
       kind: nokia_srlinux
+      mgmt-ipv4: 10.0.6.12
       type: ixrd3l
+      startup-config: configs/sp2.cfg
     client1:
       kind: linux
+      mgmt-ipv4: 10.0.6.201
     client2:
       kind: linux
+      mgmt-ipv4: 10.0.6.202
 
   links:
     - endpoints: ["l1:e1-1", "sp1:e1-1"]
