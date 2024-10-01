@@ -144,6 +144,8 @@ set / network-instance default protocols bgp dynamic-neighbors interface etherne
 
 # Next Steps
 
+[Verify](https://learn.srlinux.dev/tutorials/l3evpn/rt5-only/underlay/#verification) the underlay - read through this webpage and apply what you see there to this underlay.
+
 Standing up this lab will establish the underlay. The next step will be to add the overlay - it is recommended to use iBGP with EVPN VXLAN. 
 
 Refer back to [learn.srlinux.dev](https://learn.srlinux.dev/tutorials/) and try to implement each of these:
