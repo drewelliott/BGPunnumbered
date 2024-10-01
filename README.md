@@ -61,7 +61,7 @@ Once the topology comes up, you will have an IPv6 underlay using link-local addr
 
 # Configuration Steps
 
-> These examples are taken from the [li.cfg](configs/l1.cfg) file - look through all of the config files in the [configs directory](configs/)
+> These examples are taken from the [l1.cfg](configs/l1.cfg) file - look through all of the config files in the [configs directory](configs/)
 
 ## Physical Interfaces
 
